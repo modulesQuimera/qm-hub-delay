@@ -1,0 +1,25 @@
+{
+  "name": "qm-hub-delay",
+  "version": "1.0.0",
+  "description": "Node Component - Node-RED -> DELAY",
+  "main": "delay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulesQuimera/qm-hub-delay.git"
+  },
+  "keywords": ["quimera", "hub", "JIG"],
+  "author": "HUB-LSE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modulesQuimera/qm-hub-delay/issues"
+  },
+  "homepage": "https://github.com/modulesQuimera/qm-hub-delay#readme",
+  "node-red": {
+    "nodes": {
+      "delay": "delay.js"
+    }
+  }
+}

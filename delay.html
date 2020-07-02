@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  RED.nodes.registerType('delay',{
+      category: 'Module Processing',
+      color: '#a6bbcf',
+      defaults: {
+          seconds: {value:5, required:true, validate:function(v) { return RED.validators.number(v) && (v >= 0); }}
+      },
+      inputs:1,
+      outputs:1,
+      // icon: "font-awesome/fa-pause",
+      icon: "timer.png",
+      label: function() {
+          return "Delay:" + this.seconds + "s";
+      }
+  });
+</script>
+
+<script type="text/html" data-template-name="delay">
+  <div class="form-row">
+      <label for="node-input-seconds" style="width: max-content; !important"><i class="icon-tag"></i>Seconds:</label>
+      <input type="number" id="node-input-seconds" min="0" style="margin-left: 8px; width:60px !important " placeholder="Sec">
+            
+  </div>
+</script>
+
+<script type="text/html" data-help-name="delay">
+  <p>Delay Component is used to suspend execution of a test for a particular time.</p>
+</script>
