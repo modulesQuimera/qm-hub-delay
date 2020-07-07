@@ -1,6 +1,6 @@
 <script type="text/javascript">
-  RED.nodes.registerType('delay',{
-      category: 'Module Processing',
+  RED.nodes.registerType('processing-delay',{
+      category: 'Processing Module',
       color: '#a6bbcf',
       defaults: {
           seconds: {value:5, required:true, validate:function(v) { return RED.validators.number(v) && (v >= 0); }}
@@ -8,21 +8,74 @@
       inputs:1,
       outputs:1,
       // icon: "font-awesome/fa-pause",
-      icon: "timer.png",
+      icon: "./icons/delay.svg",
       label: function() {
           return "Delay:" + this.seconds + "s";
       }
   });
 </script>
 
-<script type="text/html" data-template-name="delay">
-  <div class="form-row">
+<style>
+
+    label{
+        width: 50% !important;
+        margin-bottom: 2px !important;
+    }
+
+    .columm{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    hr {
+    width: 40% !important;
+    float: left !important;
+    }
+
+    .hr-div-delay{
+        display: flex !important;
+        justify-content: space-between !important;
+        margin-top: 350px !important;
+    }
+
+    .optional{
+        height: max-content !important;
+        margin-top: 10px !important;
+    }
+
+    .descript{
+        text-align: center;
+    }
+
+</style>
+
+<script type="text/html" data-template-name="processing-delay">
+
+  <div class="form-row columm">
+    <strong class="descript">
+      Delay Component is used to suspend execution of a test for a particular time.
+ </strong>
+ </div>
+
+  <div class="form-row columm">
       <label for="node-input-seconds" style="width: max-content; !important"><i class="icon-tag"></i>Seconds:</label>
-      <input type="number" id="node-input-seconds" min="0" style="margin-left: 8px; width:60px !important " placeholder="Sec">
+      <input type="number" id="node-input-seconds" min="0" style="width:60px !important " placeholder="Sec">
             
   </div>
+
+
+  <div class="hr-div-delay">
+    <hr>
+    <span class="optional">Optional</span>
+    <hr>
+</div>
+
+<div class="form-row columm">
+    <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Component Nickname</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+</div>
 </script>
 
-<script type="text/html" data-help-name="delay">
+<script type="text/html" data-help-name="processing-delay">
   <p>Delay Component is used to suspend execution of a test for a particular time.</p>
 </script>
