@@ -1,17 +1,18 @@
 <script type="text/javascript">
-  RED.nodes.registerType('processing-delay',{
-      category: 'Processing Module',
-      color: '#a6bbcf',
-      defaults: {
-          seconds: {value:5, required:true, validate:function(v) { return RED.validators.number(v) && (v >= 0); }}
-      },
-      inputs:1,
-      outputs:1,
-      icon: "delay.svg",
-      label: function() {
-          return "Delay:" + this.seconds + "s";
-      }
-  });
+    RED.nodes.registerType('processing-delay',{
+        category: 'Processing Module',
+        color: '#ff0028',
+        defaults: {
+            seconds: {value:1000, required:true, validate:function(v) { return RED.validators.number(v) && (v >= 0); }},
+            name:{value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "PCS_Modular.svg",
+        label: function() {
+            return "Delay:" + this.seconds + "ms";
+        }
+    });
 </script>
 
 <style>
@@ -57,8 +58,8 @@
  </div>
 
   <div class="form-row columm">
-      <label for="node-input-seconds" style="width: max-content; !important"><i class="icon-tag"></i>Seconds:</label>
-      <input type="number" id="node-input-seconds" min="0" style="width:60px !important " placeholder="Sec">
+      <label for="node-input-seconds" style="width: max-content; !important"><i class="fa fa-clock-o"></i> Miliseconds:</label>
+      <input type="number" id="node-input-seconds" min="0" style="width:120px !important " placeholder="Sec">
             
   </div>
 

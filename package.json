@@ -1,6 +1,6 @@
 {
   "name": "qm-delay",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node Component - Node-RED -> DELAY",
   "main": "delay.js",
   "scripts": {
